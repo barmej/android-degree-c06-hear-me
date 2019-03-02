@@ -1,5 +1,5 @@
 package com.barmej.myapplication;
 
 interface ItemClickListener {
-    void onLongClickItem(int position);
+    void onClickItem(int position);
 }

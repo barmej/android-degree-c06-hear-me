@@ -43,7 +43,7 @@ public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.Ph
 
     static class PhotoSoundViewHolder extends RecyclerView.ViewHolder {
         private ItemClickListener itemClickListener;
-        private ItemClickListener itemLongClickListener;
+        private ItemLongClickListener itemLongClickListener;
         private ImageView photoIv;
         private int position;
 
@@ -53,7 +53,7 @@ public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.Ph
             super(itemView);
             photoIv = itemView.findViewById(R.id.image_view_list_item_photo);
             this.itemClickListener = itemClickListener;
-            this.itemLongClickListener = itemClickListener;
+            this.itemLongClickListener = itemLongClickListener;
             itemView.setOnClickListener(this::onItemClicked);
             itemView.setOnLongClickListener(this::OnItemLongClicked);
         }
@@ -64,7 +64,7 @@ public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.Ph
         }
 
         private void onItemClicked(View view) {
-            itemClickListener.onLongClickItem(position);
+            itemClickListener.onClickItem(position);
         }
     }
 }
