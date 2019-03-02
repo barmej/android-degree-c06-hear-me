@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+    <ImageView
+            android:id="@+id/image_view_new_photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    <ImageView
+            android:id="@+id/image_view_sound_added"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_music"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_margin="4dp"
+            android:layout_alignBaseline="@id/image_view_new_photo"
+            android:layout_alignEnd="@id/image_view_new_photo"
+            android:layout_alignBottom="@id/image_view_new_photo"/>
+
+
+    <Button
+            android:id="@+id/button_select_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_photo"
+            android:layout_toEndOf="@id/image_view_new_photo"/>
+
+    <Button
+            android:id="@+id/button_select_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_sound"
+            android:layout_toEndOf="@id/image_view_new_photo"
+            android:layout_below="@id/button_select_photo"/>
+
+    <Button
+            android:id="@+id/text_view_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:padding="16dp"
+            android:text="@string/add"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@id/image_view_new_photo"
+            android:layout_alignParentEnd="true"
+
+            />
+
+
+</RelativeLayout>
