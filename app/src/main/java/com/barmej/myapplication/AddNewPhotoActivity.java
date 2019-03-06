@@ -145,7 +145,6 @@ public class AddNewPhotoActivity extends AppCompatActivity {
 
     private void setSelectedPhoto(@NonNull Uri data) {
         mNewPhotoIv.setImageURI(data);
-        mNewPhotoIv.setVisibility(View.VISIBLE);
         mSelectedPhotoUri = data;
     }
 
