@@ -34,10 +34,25 @@ public class PhotosListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photos_list);
-        findViewById(R.id.floating_button_add).setOnClickListener(this::startAddNewPhotoActivity);
+        findViewById(R.id.floating_button_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startAddNewPhotoActivity();
+            }
+        });
         mRecyclerView = findViewById(R.id.recycler_view_photos);
         mItems = new ArrayList<PhotoSound>();
-        mAdapter = new PhotoSoundAdapter(mItems, this::playSound, this::deleteItem);
+        mAdapter = new PhotoSoundAdapter(mItems, new ItemClickListener() {
+            @Override
+            public void onClickItem(int position) {
+                onClickItem(position);
+            }
+        }, new ItemLongClickListener() {
+            @Override
+            public void onLongClickItem(int position) {
+                onLongClickItem(position);
+            }
+        });
         mLinearLayoutManager = new LinearLayoutManager(this);
         mGridLayoutManger = new GridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
@@ -94,7 +109,7 @@ public class PhotosListActivity extends AppCompatActivity {
     }
 
 
-    private void startAddNewPhotoActivity(View view) {
+    private void startAddNewPhotoActivity() {
         Intent addNewPhotoIntent = new Intent(this, AddNewPhotoActivity.class);
         startActivityForResult(addNewPhotoIntent, ADD_PHOTO);
     }

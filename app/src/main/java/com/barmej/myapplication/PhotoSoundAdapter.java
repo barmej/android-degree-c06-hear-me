@@ -54,16 +54,26 @@ public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.Ph
             photoIv = itemView.findViewById(R.id.image_view_list_item_photo);
             this.itemClickListener = itemClickListener;
             this.itemLongClickListener = itemLongClickListener;
-            itemView.setOnClickListener(this::onItemClicked);
-            itemView.setOnLongClickListener(this::OnItemLongClicked);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemClicked();
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    return OnItemLongClicked();
+                }
+            });
         }
 
-        private boolean OnItemLongClicked(View view) {
+        private boolean OnItemLongClicked() {
             itemLongClickListener.onLongClickItem(position);
             return true;
         }
 
-        private void onItemClicked(View view) {
+        private void onItemClicked() {
             itemClickListener.onClickItem(position);
         }
     }

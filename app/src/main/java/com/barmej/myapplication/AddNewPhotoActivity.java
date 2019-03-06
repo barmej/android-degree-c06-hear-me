@@ -45,9 +45,24 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         mSelectSoundBt = findViewById(R.id.button_select_sound);
         mNewPhotoIv = findViewById(R.id.image_view_new_photo);
         mNewSoundIv = findViewById(R.id.image_view_sound_added);
-        findViewById(R.id.text_view_add).setOnClickListener(this::submit);
-        mSelectSoundBt.setOnClickListener(this::selectSound);
-        mSelectPhotoBt.setOnClickListener(this::selectPhoto);
+        findViewById(R.id.text_view_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submit();
+            }
+        });
+        mSelectSoundBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectSound();
+            }
+        });
+        mSelectPhotoBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectPhoto();
+            }
+        });
     }
 
     @Override
@@ -84,7 +99,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         }
     }
 
-    private void submit(View view) {
+    private void submit() {
         if (mSelectedSoundUri == null || mSelectedPhotoUri == null) {
             Toast.makeText(this, R.string.select_picture_and_sound, Toast.LENGTH_SHORT).show();
         } else {
@@ -112,7 +127,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, getString(R.string.select_picture)), PICK_SOUND);
     }
 
-    private void selectSound(View view) {
+    private void selectSound() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_SOUND_FROM_GALLERY_PERMISSION);
         } else {
@@ -120,7 +135,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         }
     }
 
-    private void selectPhoto(View view) {
+    private void selectPhoto() {
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_PHOTO_FROM_GALLERY_PERMISSION);
