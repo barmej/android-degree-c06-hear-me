@@ -52,8 +52,6 @@
             android:textColor="@color/colorPrimary"
             android:layout_below="@id/image_view_new_photo"
             android:layout_alignParentEnd="true"
-
             />
-
 
 </RelativeLayout>

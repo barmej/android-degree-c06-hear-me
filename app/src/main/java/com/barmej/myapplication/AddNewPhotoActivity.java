@@ -29,8 +29,6 @@ public class AddNewPhotoActivity extends AppCompatActivity {
     public static final String RES_EXTRA_SOUND_URI = "RES_EXTRA_SOUND_URI";
 
 
-    private Button mSelectPhotoBt;
-    private Button mSelectSoundBt;
     private ImageView mNewPhotoIv;
     private ImageView mNewSoundIv;
     private Uri mSelectedPhotoUri;
@@ -41,23 +39,24 @@ public class AddNewPhotoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_photo);
-        mSelectPhotoBt = findViewById(R.id.button_select_photo);
-        mSelectSoundBt = findViewById(R.id.button_select_sound);
+        Button selectPhotoBt = findViewById(R.id.button_select_photo);
+        Button selectSoundBt = findViewById(R.id.button_select_sound);
+        Button submitBt = findViewById(R.id.text_view_add);
         mNewPhotoIv = findViewById(R.id.image_view_new_photo);
         mNewSoundIv = findViewById(R.id.image_view_sound_added);
-        findViewById(R.id.text_view_add).setOnClickListener(new View.OnClickListener() {
+       submitBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 submit();
             }
         });
-        mSelectSoundBt.setOnClickListener(new View.OnClickListener() {
+        selectSoundBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectSound();
             }
         });
-        mSelectPhotoBt.setOnClickListener(new View.OnClickListener() {
+        selectPhotoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectPhoto();
