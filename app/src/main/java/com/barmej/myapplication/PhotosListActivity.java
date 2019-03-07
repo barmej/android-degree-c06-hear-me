@@ -41,16 +41,16 @@ public class PhotosListActivity extends AppCompatActivity {
             }
         });
         mRecyclerView = findViewById(R.id.recycler_view_photos);
-        mItems = new ArrayList<PhotoSound>();
+        mItems = new ArrayList<>();
         mAdapter = new PhotoSoundAdapter(mItems, new ItemClickListener() {
             @Override
             public void onClickItem(int position) {
-                onClickItem(position);
+                playSound(position);
             }
         }, new ItemLongClickListener() {
             @Override
             public void onLongClickItem(int position) {
-                onLongClickItem(position);
+                deleteItem(position);
             }
         });
         mLinearLayoutManager = new LinearLayoutManager(this);
