@@ -115,9 +115,9 @@ public class PhotosListActivity extends AppCompatActivity {
         startActivityForResult(addNewPhotoIntent, ADD_PHOTO);
     }
 
-    private void deleteItem(int i) {
-        mItems.remove(i);
-        mAdapter.notifyItemRemoved(i);
+    private void deleteItem(int position) {
+        mItems.remove(position);
+        mAdapter.notifyItemRemoved(position);
     }
 
     private void addItem(PhotoSound photoSound) {
