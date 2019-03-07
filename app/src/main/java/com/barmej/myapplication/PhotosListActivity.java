@@ -98,16 +98,17 @@ public class PhotosListActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (resultCode == RESULT_OK && requestCode == ADD_PHOTO && data != null) {
-            Uri soundUri = data.getParcelableExtra(AddNewPhotoActivity.RES_EXTRA_SOUND_URI);
-            Uri photoUri = data.getParcelableExtra(AddNewPhotoActivity.RES_EXTRA_PHOTO_URI);
-            PhotoSound photoSound = new PhotoSound(photoUri, soundUri);
-            addItem(photoSound);
-        } else {
-            Toast.makeText(this, R.string.didnt_add_photo, Toast.LENGTH_LONG).show();
+        if(requestCode == ADD_PHOTO){
+            if (resultCode == RESULT_OK && data != null) {
+                Uri soundUri = data.getParcelableExtra(AddNewPhotoActivity.RES_EXTRA_SOUND_URI);
+                Uri photoUri = data.getParcelableExtra(AddNewPhotoActivity.RES_EXTRA_PHOTO_URI);
+                PhotoSound photoSound = new PhotoSound(photoUri, soundUri);
+                addItem(photoSound);
+            } else {
+                Toast.makeText(this, R.string.didnt_add_photo, Toast.LENGTH_LONG).show();
+            }
         }
     }
-
 
     private void startAddNewPhotoActivity() {
         Intent addNewPhotoIntent = new Intent(this, AddNewPhotoActivity.class);
