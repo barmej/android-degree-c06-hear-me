@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">AdapterViews</string>
-    <string name="add_photo">Add photo</string>
-    <string name="add_sound">Add sound</string>
-    <string name="new_photo">New photo to be add</string>
-    <string name="add">Add</string>
-    <string name="cancel">Cancel</string>
-    <string name="select_picture">Select Picture</string>
-    <string name="read_permission_needed_to_access_files">Read external memory permission is needed to be able to pick images and sound from device</string>
-    <string name="failed_to_get_image">Failed to read from device</string>
-    <string name="select_picture_and_sound">Please select a picture and sound to add</string>
-    <string name="didnt_add_photo">Failed to add a new item</string>
-    <string name="couldnt_play_sound">Couldn\'t play sound</string>
-    <string name="grid">Grid</string>
-    <string name="list">List</string>
+    <string name="add_photo">اضف صورة</string>
+    <string name="add_sound">اضف صوت</string>
+    <string name="new_photo">الصورت التى سيتم اضافتها</string>
+    <string name="add">اضافة</string>
+    <string name="cancel">الغاء</string>
+    <string name="select_picture">اختر صورة</string>
+    <string name="read_permission_needed_to_access_files">صلاحيه قراءة الذاكرة الخارجية مطلوبة لقراءة ملفات الصوت والصور على الهاتف</string>
+    <string name="failed_to_get_image">فشل فى قراءة الملف من الهاتف</string>
+    <string name="select_picture_and_sound">برجاء اختيار صوت وصورة للاضافة</string>
+    <string name="didnt_add_photo">فشل فى اضافة عنصر جديد</string>
+    <string name="couldnt_play_sound">فشل فى تشغيل الصوت</string>
+    <string name="grid">جدول</string>
+    <string name="list">قائمة</string>
 </resources>
