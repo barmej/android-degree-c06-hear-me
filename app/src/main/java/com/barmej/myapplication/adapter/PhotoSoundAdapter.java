@@ -1,14 +1,19 @@
-package com.barmej.myapplication;
+package com.barmej.myapplication.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.barmej.myapplication.listener.ItemClickListener;
+import com.barmej.myapplication.listener.ItemLongClickListener;
+import com.barmej.myapplication.entity.PhotoSound;
+import com.barmej.myapplication.R;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.PhotoSoundViewHolder> {
     private ArrayList<PhotoSound> mItems;

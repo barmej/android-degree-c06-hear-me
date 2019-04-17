@@ -1,6 +1,8 @@
-package com.barmej.myapplication;
+package com.barmej.myapplication.entity;
 
 import android.net.Uri;
+
+import com.barmej.myapplication.R;
 
 import java.util.ArrayList;
 
