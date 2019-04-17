@@ -25,13 +25,13 @@ public class PhotoSound {
     public static ArrayList<PhotoSound> getDefaultList() {
         ArrayList<PhotoSound> defaultList = new ArrayList<>();
 
-        defaultList.add(new PhotoSound(resourceToUri("drawable/eat"), resourceToUri("raw/eat_audio")));
-        defaultList.add(new PhotoSound(resourceToUri("drawable/drink"), resourceToUri("raw/drink_audio")));
+        defaultList.add(new PhotoSound(resourceToUri(R.drawable.eat), resourceToUri(R.raw.eat_audio)));
+        defaultList.add(new PhotoSound(resourceToUri(R.drawable.drink), resourceToUri(R.raw.drink_audio)));
 
         return defaultList;
     }
 
-    private static Uri resourceToUri(String res) {
+    private static Uri resourceToUri(int res) {
         return Uri.parse("android.resource://com.barmej.myapplication" + "/" + res);
     }
 }
