@@ -41,7 +41,7 @@ public class AddNewPhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_photo);
         Button selectPhotoBt = findViewById(R.id.button_select_photo);
         Button selectSoundBt = findViewById(R.id.button_select_sound);
-        Button submitBt = findViewById(R.id.text_view_add);
+        Button submitBt = findViewById(R.id.button_submit);
         mNewPhotoIv = findViewById(R.id.image_view_new_photo);
         mNewSoundIv = findViewById(R.id.image_view_sound_added);
        submitBt.setOnClickListener(new View.OnClickListener() {

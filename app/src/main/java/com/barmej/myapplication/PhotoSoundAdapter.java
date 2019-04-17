@@ -7,14 +7,15 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoSoundAdapter extends RecyclerView.Adapter<PhotoSoundAdapter.PhotoSoundViewHolder> {
-    private List<PhotoSound> mItems;
+    private ArrayList<PhotoSound> mItems;
     private ItemClickListener mItemClickListener;
     private ItemLongClickListener itemLongClickListener;
 
-    public PhotoSoundAdapter(List<PhotoSound> items,
+    public PhotoSoundAdapter(ArrayList<PhotoSound> items,
                              @NonNull ItemClickListener itemClickListener,
                              @NonNull ItemLongClickListener itemLongClickListener) {
         this.mItems = items;

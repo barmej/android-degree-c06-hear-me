@@ -13,4 +13,5 @@
     <string name="couldnt_play_sound">فشل فى تشغيل الصوت</string>
     <string name="grid">جدول</string>
     <string name="list">قائمة</string>
+    <string name="add_new_item_description">يمكنك  معاينة وإضافة عنصر إلى القائمة من خلال اختيار الصورة والصوت المناسب من جهازك.</string>
 </resources>

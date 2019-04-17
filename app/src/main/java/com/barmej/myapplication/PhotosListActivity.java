@@ -41,7 +41,7 @@ public class PhotosListActivity extends AppCompatActivity {
             }
         });
         mRecyclerView = findViewById(R.id.recycler_view_photos);
-        mItems = new ArrayList<>();
+        mItems = PhotoSound.getDefaultList();
         mAdapter = new PhotoSoundAdapter(mItems, new ItemClickListener() {
             @Override
             public void onClickItem(int position) {
