@@ -14,4 +14,6 @@
     <string name="grid">جدول</string>
     <string name="list">قائمة</string>
     <string name="add_new_item_description">يمكنك  معاينة وإضافة عنصر إلى القائمة من خلال اختيار الصورة والصوت المناسب من جهازك.</string>
+    <string name="delete_confirmation">هل أنت متأكد من أنك تريد إزالة هذا العنصر؟</string>
+    <string name="confirm">نعم</string>
 </resources>

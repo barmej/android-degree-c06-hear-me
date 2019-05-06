@@ -1,5 +1,6 @@
 package com.barmej.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import com.barmej.myapplication.listener.ItemClickListener;
 import com.barmej.myapplication.listener.ItemLongClickListener;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -121,9 +123,24 @@ public class PhotosListActivity extends AppCompatActivity {
         startActivityForResult(addNewPhotoIntent, ADD_PHOTO);
     }
 
-    private void deleteItem(int position) {
-        mItems.remove(position);
-        mAdapter.notifyItemRemoved(position);
+    private void deleteItem(final int position) {
+        AlertDialog alertDialog = new AlertDialog.Builder(this)
+                .setMessage(R.string.delete_confirmation)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mItems.remove(position);
+                        mAdapter.notifyItemRemoved(position);
+                    }
+                })
+                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).create();
+
+        alertDialog.show();
     }
 
     private void addItem(PhotoSound photoSound) {
