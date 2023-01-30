@@ -71,6 +71,7 @@
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/add_sound"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_select_photo"
@@ -83,6 +84,7 @@
         android:layout_margin="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/add_photo"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintEnd_toStartOf="@+id/button_select_sound"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +100,7 @@
         android:layout_marginBottom="8dp"
         android:padding="16dp"
         android:text="@string/add"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
